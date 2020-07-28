@@ -9,9 +9,32 @@ export default {
       title: 'Title'
     },
     {
-      name: 'description',
-      type: 'text',
-      title: 'Description'
-    }
+      name: 'excerpt',
+      type: 'excerptPortableText',
+      title: 'Excerpt'
+    },
+    {
+      name: 'categories',
+      type: 'array',
+      title: 'Categories',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'category'
+          }
+        }
+      ]
+    },
+    {
+      name: 'body',
+      type: 'bodyPortableText',
+      title: 'Body'
+    },
+    {
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Main image'
+    },
   ]
 }
