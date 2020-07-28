@@ -72,12 +72,17 @@ export default () =>
         .icon(MdLocalOffer)
         .schemaType('category')
         .child(S.documentTypeList('category').title('Categories')),
+    S.listItem()
+        .title('Apple Post')
+        .icon(MdDescription)
+        .schemaType('applepost')
+        .child(S.documentTypeList('applepost').title('Apple Post')),
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above.
       ...S.documentTypeListItems().filter(
         listItem =>
-          !['category', 'author', 'post', 'siteSettings'].includes(
+          !['category', 'author', 'post', 'applepost', 'siteSettings'].includes(
             listItem.getId()
           )
       )
